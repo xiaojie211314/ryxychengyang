@@ -1,0 +1,387 @@
+﻿#rootWrap{
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    overflow: auto;
+}
+#ryxy{
+    width: 100%;
+    height: 100%;
+    padding:.35rem .3rem;
+}
+#top{
+    height: 58%;
+}
+#bottom{
+    height: 42%;
+}
+
+/*你们的css样式 写下面*/
+#ryxy .top-center .title{
+    width: 4.38rem;
+    height: .4rem;
+    margin-top: .21rem;
+}
+/*性别分布*/
+#ryxy .xbfb{
+    width: 5.5rem;
+    height: 0.5rem;
+    margin: 0.15rem 0 0 0.05rem;
+}
+#ryxy .xbfb img{
+    width: 0.24rem;
+    height: 0.48rem;
+}
+#ryxy .xbfb .bl{
+    width: 4.7rem;
+    height: 0.3rem;
+    margin:0rem 0.14rem 0 0.14rem;
+}
+#ryxy .xbfb .bl .nan{
+    width: 35.5%;
+    height: 0.5rem;
+    background:linear-gradient(0deg,rgba(0,140,247,1),rgba(18,193,255,1));
+    text-align: center;
+    font-size: 0.18rem;
+    font-weight:500;
+    line-height: 0.5rem;
+}
+#ryxy .xbfb .bl .line{
+    width:1%;
+    height: 0.3rem;
+    background: #000000;
+}
+#ryxy .xbfb .bl .nv{
+    width: 63.5%;
+    height: 0.5rem;
+    background: linear-gradient(0deg,rgba(245,61,67,1),rgba(255,102,107,1));
+    text-align: center;
+    font-size: 0.18rem;
+    font-weight: 500;
+    line-height: 0.5rem;
+}
+#ryxy .top-center .ditu {
+    width: 6.2rem;
+    height: 3.6rem;
+    background: url(../image/map.png) no-repeat;
+    background-size: 6.2rem 3.5rem;
+    position: relative;
+}
+/*人数*/
+#ryxy .top-center img.title{
+    /* margin-left: 1rem; */
+}
+#ryxy .top-center .numberpeople{
+    width: 100%;
+    height: 0.8rem;
+    display: flex;
+    margin-top: 0.5rem;
+}
+#ryxy .top-center .numberpeople .zrs,#ryxy .top-center .numberpeople .app,#ryxy .top-center .numberpeople .gzh{
+    flex: 1;
+    width: 2rem;
+    text-align: center;
+    font-size: 0.32rem;
+    font-weight: 500;
+}
+#ryxy .top-center .numberpeople .zrs p, #ryxy .top-center .numberpeople .app p,#ryxy .top-center .numberpeople .gzh p{
+    margin-top: .1rem;
+}
+#ryxy .top-center .numberpeople .zrs em,#ryxy .top-center .numberpeople .app em,#ryxy .top-center .numberpeople .gzh em{
+    font-size: 0.18rem;
+    font-weight: 400;
+}
+/*地图*/
+/*#ryxy .top-center .ditu{*/
+/*    width: 6.2rem;*/
+/*    height: 3.6rem;*/
+/*    background: url("../image/map.png") no-repeat;*/
+/*    background-size: 6.2rem 3.6rem;*/
+/*    position: relative;*/
+/*}*/
+/*棘洪滩*/
+#ryxy .top-center .ditu .jht{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top: 0.85rem;
+    left: 1.99rem;
+}
+/*城阳*/
+#ryxy .top-center .ditu .cy{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top: 0.9rem;
+    left: 3.41rem;
+}
+/*惜福镇*/
+#ryxy .top-center .ditu .xfz{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top: 1.0rem;
+    left: 4.71rem;
+}
+/*上马*/
+#ryxy .top-center .ditu .sm{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size:100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top:1.58rem;
+    left: 1.50rem;
+}
+/*流亭*/
+#ryxy .top-center .ditu .lt{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size:100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top: 1.66rem;
+    left: 2.91rem;
+}
+/*夏庄*/
+#ryxy .top-center .ditu .xz{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size:100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top:1.83rem;
+    left: 4.07rem;
+}
+/*河套*/
+#ryxy .top-center .ditu .ht{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size:100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top: 2.07rem;
+    left: 0.44rem;
+}
+/*红岛*/
+#ryxy .top-center .ditu .hd{
+    width: 0.98rem;
+    height: 0.98rem;
+    /* background: url("../image/map-bg3.png") no-repeat; */
+    background-size:100% 100%;
+    text-align: center;
+    line-height: 0.98rem;
+    font-size: 0.15rem;
+    position: absolute;
+    top:2.30rem;
+    left: 1.60rem;
+}
+/*年龄分布*/
+#ryxy .top-left .ratioTitle p{
+    font-size: 0.16rem;
+    font-weight:400;
+}
+#ryxy .top-left .ratioTitle p.pn{
+   margin: 0 0.1rem 0 1.90rem;
+}
+#ryxy .top-left .ratioTitle .nan{
+    width:12px;
+    height:12px;
+    background:#00c4d6;
+    border-radius:3px;
+    margin-top:0.03rem;
+}
+#ryxy .top-left .ratioTitle .nv{
+    width:12px;
+    height:12px;
+    background:#FF8426;
+    border-radius:3px;
+    margin:0.03rem 0.1rem 0 0.84rem;
+}
+#ryxy .top-left ul li{
+    width: 5.5rem;
+    height: 0.2rem;
+    margin-top: 0.2rem;
+}
+#ryxy .top-left ul li .ls{
+    width: 2.1rem;
+    height: 0.2rem;
+}
+#ryxy .top-left ul li .ls>div{
+    width: 1.9rem;
+    height: 0.2rem;
+    /*background: #ffffff;*/
+}
+#ryxy .top-left ul li .ls .ls-bg{
+    width:80%;
+    height: 0.2rem;
+    background: #00c4d6;
+}
+#ryxy .top-left ul li .ls p{
+    font-size: 0.14rem;
+    font-weight:500;
+    color: #00c4d6;
+    text-align: right;
+    line-height: 0.15rem;
+    margin-right: 0.1rem;
+}
+#ryxy .top-left ul li .text{
+    width: 1.1rem;
+    height: 0.15rem;
+    font-size: 0.15rem;
+    text-align: center;
+    font-weight: 600;
+    margin: 0 0.1rem 0 0.1rem;
+    line-height: .15rem;
+}
+#ryxy .top-left ul li .cs{
+    width:2.1rem;
+    height: 0.2rem;
+ }
+#ryxy .top-left ul li .cs>div{
+    width: 1.9rem;
+    height: 0.2rem;
+    /*background: #ffffff;*/
+}
+/*#ryxy .top-left ul li .cs-bg{*/
+/*    width: 50%;*/
+/*    height: 0.2rem;*/
+/*background: #FF892E;*/
+/*}*/
+#ryxy .top-left ul li .cs p{
+    font-size: 0.14rem;
+    font-weight:500;
+    color: #FF8426;
+    line-height: 0.15rem;
+    margin-left: 0.1rem;
+    /*text-align: left;*/
+}
+/*预警分析*/
+#ryxy  button{
+    /*width: 1.1rem;*/
+    height: 0.34rem;
+    line-height: .34rem;
+    border: none;
+    background: #FF5C61;
+    border-radius:3px;
+    color: #ffffff;
+    font-size: 0.16rem;
+    position: absolute;
+    top:-0.1rem;
+    right: 0;
+    padding: 0 .2rem;
+    z-index: 999;
+}
+#ryxy  button img{
+    width: 0.18rem;
+    height: 0.18rem;
+}
+
+
+/*波纹*/
+/*波纹*/
+.ylBtn {
+    position: relative;
+    display: inline-block;
+    line-height: 47px;
+    height: 47px;
+    width: 47px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    border-radius: 50%;
+    margin: 10% auto;
+    color: #222;
+    z-index: 9999
+}
+
+
+
+
+/* 波纹动画效果 */
+.water1 {
+    -webkit-animation: wateranimate 12s 9s ease-out infinite;
+    animation: wateranimate 12s 9s ease-out infinite;
+}
+
+.water2 {
+    -webkit-animation: wateranimate 12s 6s ease-out infinite;
+    animation: wateranimate 12s 6s ease-out infinite;
+}
+
+.water3 {
+    -webkit-animation: wateranimate 12s 3s ease-out infinite;
+    animation: wateranimate 12s 3s ease-out infinite;
+}
+
+.water4 {
+    -webkit-animation: wateranimate 12s 0s ease-out infinite;
+    animation: wateranimate 12s 0s ease-out infinite;
+}
+
+.water1,
+.water2,
+.water3,
+.water4 {
+    padding: 25%;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 120px 30px #aadeff inset;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+
+@-webkit-keyframes wateranimate {
+                0% {
+                    -webkit-transform: scale(0);
+                    opacity: 0.5;
+                }
+                100% {
+                    -webkit-transform: scale(2);
+                    opacity: 0;
+                }
+            }
+            @keyframes wateranimate {
+                0% {
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                    opacity: 0.5;
+                }
+                100% {
+                    -webkit-transform: scale(2);
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            } 

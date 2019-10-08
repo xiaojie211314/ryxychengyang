@@ -1,0 +1,354 @@
+﻿#rootWrap{
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    overflow: auto;
+}
+#ryxy3{
+    width: 100%;
+    height: 100%;
+    padding:.35rem .3rem;
+}
+
+#top{
+    height: 58%;
+}
+#bottom{
+    height: 42%;
+}
+
+/*你们的css样式 写下面*/
+#ryxy3 .top-center .title{
+    width: 3.98rem;
+    height: .4rem;
+    margin-top: .21rem;
+}
+#ryxy3 .func {
+    /* height: calc(50% - 2.1rem); */
+    padding-top: .2rem;
+    /*padding-bottom: 1rem;*/
+}
+#ryxy3 .func .item{
+    width: 3rem;
+    /*height: 1.79rem;*/
+    background: url(../image/a1.png) no-repeat center;
+    background-size: cover;
+}
+#ryxy3 .func .item:last-child{
+    width: 3rem;
+    /*height: 1.79rem;*/
+    background: url(../image/a2.png) no-repeat center;
+    background-size: cover
+}
+
+/* 高危人群预警率 */
+#ryxy3 .warning-yy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ryxy3 .circle {
+    width: 1.53rem;
+    height: 1.53rem;
+    position: relative;
+    border-radius: 50%;
+    background: #FF5C61;
+}
+#ryxy3 .circle+.circle{
+    margin-left: .35rem;
+}
+#ryxy3  .circle2{
+    background: #FF740A;
+}
+#ryxy3  .circle3{
+    background: #FFC100;
+}
+#ryxy3 .pie_left,
+#ryxy3 .pie_right {
+    width: 1.54rem;
+    height: 1.54rem;
+    position: absolute;
+    top: 0;left: 0;
+}
+#ryxy3 .circle-left,
+#ryxy3 .circle-right {
+    width: 1.54rem;
+    height: 1.54rem;
+    background: #2C2839;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#ryxy3 .pie_right,
+#ryxy3 .circle-right {
+    clip: rect(0,auto,auto,.77rem);
+}
+#ryxy3 .pie_left,
+#ryxy3 .circle-left {
+    clip: rect(0,.77rem,auto,0);
+}
+#ryxy3 .mask {
+    width: 1.34rem;
+    height: 1.34rem;
+    border-radius: 50%;
+    left: .1rem;
+    top: .1rem;
+    background: #0B091A;
+    position: absolute;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#ryxy3 .circle .export-box{
+  font-size: .28rem;
+  font-weight: 600;
+  margin-bottom: .02rem;
+}
+#ryxy3 .circle .span-text {
+   font-size: .16rem;
+}
+
+
+/* 求助数 预警数 */
+#ryxy3 .top-center .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ryxy3 .top-center img {
+    display: inline-block;
+    width: .9rem;
+    height: .9rem
+}
+#ryxy3 .top-center p span,
+#ryxy3 .top-center p strong {
+    display: block;
+    color: #fff;
+    text-align: left;
+    /*font-size: .24rem*/
+}
+#ryxy3 .top-center p strong {
+    font-size: .28rem;
+    /* margin-top: .15rem; */
+}
+
+/* 危机预警 */
+#ryxy3 .top-right .analyse {
+    background: none;
+    color: #fff;
+    /*width: 1.1rem;*/
+    height: .34rem;
+    line-height: .34rem;
+    background: #00c4d6;
+    font-size: .16rem;
+    color: #fff;
+    border: none;
+    right: 0;
+    top: -10px;
+    border-radius: .03rem;
+    cursor: pointer;
+    padding: 0 .2rem;
+    z-index: 999;
+}
+#ryxy3 .top-right .analyse:before {
+    content: "";
+    display: inline-block;
+    width: .18rem;
+    height: .18rem;
+    background: url(../image/analyse-icon.png) no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: .06rem;
+}
+#ryxy3 .top-right table {
+    font-size: .13rem;
+    color: #fff;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+#ryxy3 .top-right table th,
+#ryxy3 .top-right table td {
+    white-space: nowrap;
+    text-align: center;
+}
+#ryxy3 .top-right table th {
+    font-size: .15rem;
+    background: #0593FF;
+    height: .4rem;
+    line-height: .4rem;
+    border: none;
+}
+#ryxy3 .top-right table tbody tr {
+    line-height: .4rem;
+    padding: 0 .1rem;
+}
+#ryxy3 .top-right table tbody tr:nth-child(even){
+    background: rgba(255,255,255,.08);
+}
+#ryxy3 .top-right table td {
+    font-size: .13rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+/* 预警总分析 */
+#ryxy3 .warning-analyse{
+    /* margin-top: .1rem; */
+}
+#ryxy3 .warning-analyse li {
+    /*display: flex;*/
+    align-items: center;
+    margin-top: .15rem;
+    height: .65rem;
+}
+#ryxy3 .warning-analyse li+li {
+    margin-top: .1rem;
+}
+#ryxy3 .warning-analyse li .yjtotal {
+    font-size: .18rem;
+    color: #fff;
+    white-space: nowrap;
+    margin-bottom: .1rem;
+    margin-left: .1rem;
+
+}
+#ryxy3 .warning-analyse li .yjtotal span {
+    display: inline-block;
+    padding: 0 .06rem;
+    color: #FF5C61;
+    font-size: .2rem;
+}
+#ryxy3 .warning-analyse .progress {
+    display: flex;
+    width: 3rem;
+    height: .25rem;
+    background: rgba(204,204,204,.15);
+    position: relative;
+    margin-left: .1rem;
+}
+#ryxy3 .warning-analyse p.rate {
+    width: 0;
+    height: .25rem;
+    line-height: .25rem;
+    background-color: #FF5C61;
+}
+#ryxy3 .warning-analyse .pro2 p.rate {
+    background-color: #FF740A;
+}
+#ryxy3 .warning-analyse .pro3 p.rate {
+    background-color: #FFC100;
+}
+#ryxy3 .warning-analyse .pro4 p.rate {
+    background-color: #00c4d6;
+}
+#ryxy3 .warning-analyse li .rate-span {
+    font-size: .14rem;
+    display: block;
+    height: .25rem;
+    line-height: .25rem;
+    padding-left: .09rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#ryxy3 .warning-analyse li .rate-span em{
+    font-style: normal;
+}
+#ryxy3 .warning-analyse li .percent {
+    position: relative;
+    top: .025rem;
+    left: .75rem;
+    font-size: .14rem;
+    font-weight: bold;
+    color: #FF5C61;
+}
+#ryxy3 .warning-analyse .pro2 .percent,
+#ryxy3 .warning-analyse .pro2 .yjtotal span{
+    color: #FF740A;
+}
+#ryxy3 .warning-analyse .pro3 .percent,
+#ryxy3 .warning-analyse .pro3 .yjtotal span{
+    color: #FFC100;
+}
+#ryxy3 .warning-analyse .pro4 .percent,
+#ryxy3 .warning-analyse .pro4 .yjtotal span{
+    color: #00c4d6;
+}
+
+/* 焦虑情绪预警 与A型行为预警底部部分*/
+#ryxy3 #jlqx,
+#ryxy3 #xwyj {
+    margin-top: .15rem;
+}
+#ryxy3 .yujing {
+    width: 100%;
+    margin-top: .2rem;
+    margin-left: -.03rem;
+}
+#ryxy3 .yujing li {
+   float: left;
+   width: 49%;
+   display: flex;
+   align-items: center;
+   margin-left: .03rem;
+}
+#ryxy3 .yujing li .yjtotal {
+    font-size: .14rem;
+    color: #fff;
+    white-space: nowrap;
+    float: left;
+}
+#ryxy3 .yujing li .yjtotal span {
+    display: inline-block;
+    padding: 0 .03rem 0 .07rem;
+    color: #FF5C61;
+    font-size: .16rem;
+}
+#ryxy3 .yujing .progress {
+    width: .9rem;
+    height: .14rem;
+    line-height: .14rem;
+    background: rgba(204,204,204,.15);
+    position: relative;
+    margin-left: .09rem;
+    float: left;
+}
+#ryxy3 .yujing p.rate {
+    width: 0;
+    height: .14rem;
+    line-height: .14rem;
+    background-color: #FF5C61;
+}
+#ryxy3 .yujing .pro2 p.rate {
+    background-color: #FF740A;
+}
+#ryxy3 .yujing .pro3 p.rate {
+    background-color: #FFC100;
+}
+#ryxy3 .yujing .pro4 p.rate {
+    background-color: #00c4d6;
+}
+#ryxy3 .yujing .pro2 .yjtotal span{
+    color: #FF740A;
+}
+#ryxy3 .yujing .pro3 .yjtotal span{
+    color: #FFC100;
+}
+#ryxy3 .yujing .pro4 .yjtotal span{
+    color: #00c4d6;
+}
+
+/* A型行为预警 */
+#ryxy3 .xwyj-ul.yujing {
+    margin-top: .1rem;
+}
+#ryxy3 .yujing .pro3,
+#ryxy3 .yujing .pro4 {
+    margin-top: .1rem;
+}

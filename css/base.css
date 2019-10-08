@@ -1,0 +1,252 @@
+﻿/* html,body{overflow: hidden;} */
+/*html{-webkit-text-size-adjust: none;}*/
+body,input,textarea,dl,dt,dd,h1,h2,h3,h4,h5,h6,table,tr,td,p,div,span{margin: 0; padding: 0; box-sizing: border-box;}
+body{background: #05081C;font-size: .6rem; font-family:'PingFang SC'; color:#fff}
+
+/*先注视了，方便调试     [v-cloak] {display: none;}*/
+[v-cloak] {display: none;}
+
+/*input输入框placeholder颜色*/
+input::-webkit-input-placeholder{color: #aaa;}
+input,textarea{-webkit-tap-highlight-color:transparent;}
+input:focus,textarea:focus{outline:none;}
+.font-red{color: #F48B8B;}
+.no-backgroud{background: none !important;}
+a{text-decoration: none; color: #343434; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+input[type=search]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+ul,ol,li{list-style: none;margin: 0;padding:0; }
+em{font-style: normal;}
+.tl{text-align: left;}
+.tc{text-align: center;}
+.tr{text-align: right;}
+
+.flex{display:flex;}
+.flex-start{justify-content:flex-start;}
+.flex-end{justify-content:flex-end;}
+.flex-between{justify-content:space-between;}
+.flex-around{justify-content: space-around;}
+.flex-center{justify-content:center;}
+.flex-top{align-items: flex-start;}
+.flex-middle{align-items:center;}
+.flex-bottom{align-items: flex-end;}
+.flex-grow-1{flex-grow: 1}
+.flex-shrink-0{flex-shrink: 0}
+.flex-wrap{flex-wrap:wrap;}
+
+.mt5{margin-top:.05rem}
+.mt10{margin-top:.1rem}
+.mt15{margin-top:.15rem}
+.mt20{margin-top:.2rem}
+.mt29{margin-top:.29rem}
+.mt30{margin-top:.3rem}
+.mt38{margin-top:.38rem}
+.mt40{margin-top:.4rem}
+.mt45{margin-top:.45rem}
+.mt50{margin-top:.5rem}
+.mt60{margin-top:.6rem}
+.mt75{margin-top:.75rem}
+.mt90{margin-top:.9rem}
+.mt100{margin-top:1rem}
+.mt110{margin-top:1.1rem}
+.mt115{margin-top:1.15rem}
+
+.ml5{margin-left: .05rem}
+.ml10{margin-left: .10rem}
+.ml15{margin-left: .15rem}
+.ml20{margin-left: .2rem}
+.ml30{margin-left: .3rem}
+.ml31{margin-left: .31rem}
+.ml40{margin-left: .4rem}
+.ml60{margin-left:.6rem}
+.ml110{margin-left:1.1rem}
+
+.mr31{margin-right: .31rem}
+.mr30{margin-right: .30rem}
+.mr60{margin-right: .60rem}
+.mr110{margin-right:1.1rem}
+
+.mb10{margin-bottom: .1rem}
+.mb15{margin-bottom: .15rem}
+.mb19{margin-bottom: .19rem}
+.mb30{margin-bottom: .30rem}
+.mb38{margin-bottom: .38rem}
+.mb45{margin-bottom: .45rem}
+.mb50{margin-bottom: .5rem}
+.mb60{margin-bottom: .6rem}
+
+.p10{padding: .1rem;}
+.p20{padding: .2rem;}
+.p31{padding: .31rem;}
+
+.pl30{padding-left:.3rem;}
+.pl31{padding-left:.31rem;}
+
+.pr30{padding-right:.3rem;}
+.pr31{padding-right:.31rem;}
+
+.pt10{padding-top:.1rem;}
+.pt20{padding-top:.2rem;}
+.pt25{padding-top:.25rem;}
+.pt30{padding-top:.3rem;}
+.pt31{padding-top:.31rem;}
+.pt38{padding-top:.38rem;}
+.pt40{padding-top:.4rem;}
+.pt50{padding-top:.5rem;}
+.pt100{padding-top:1rem;}
+
+.pb15{padding-bottom:.15rem;}
+.pb19{padding-bottom:.19rem;}
+.pb20{padding-bottom:.2rem;}
+.pb28{padding-bottom:.28rem;}
+.pb29{padding-bottom:.29rem;}
+.pb30{padding-bottom:.3rem;}
+.pb31{padding-bottom:.31rem;}
+.pb40{padding-bottom:.4rem;}
+.pb100{padding-bottom: 1rem}
+.pb150{padding-bottom: 1.5rem}
+
+/*clearfix*/
+.fl{float: left}
+.fr{float: right}
+.clearfix:before,.clearfix:after{display:table; line-height:0; content:"";}
+.clearfix:after{clear:both;}
+
+/*定位*/
+.pr{position: relative;}
+.pa{position: absolute;}
+
+/**底部一像素边框**/
+.bottom1px{position: relative;}
+.bottom1px:after{display: block; content: " "; width: 100%; box-sizing: border-box; border-bottom: 1px solid #eee; -webkit-transform: scaleY(0.5); -ms-transform: scaleY(0.5); transform: scaleY(0.5); -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; position: absolute; bottom:0; left: 0; right: 0; z-index:1;}
+
+
+/*透明盒子*/
+ #box{
+    /* width: 4.52rem; */
+    /* height: 4.02rem; */
+    box-sizing:border-box;
+    position: relative;
+}
+
+#box .box-title{
+   display: flex;
+   position: relative;
+   width: 100%;
+}
+
+#box .box-title .center{
+    box-sizing: border-box;
+    background:url(../image/k-c.png) repeat-x left top;
+    height:.72rem;
+    background-size: contain;
+}
+
+#box .box-title .center h3{
+    font-size:.22rem;
+    /* height:.47rem; */
+    height:100%;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box .box-title .left{
+    box-sizing: border-box;
+    background:url(../image/k-l.png) no-repeat left top;
+    background-size:  100% 100%;
+    width:.32rem;
+    height:.72rem;
+}
+
+#box .box-title .right{
+    box-sizing: border-box;
+    background:url(../image/k-r.png) no-repeat left top;
+    background-size: 100% 100%;
+    width:.5rem;
+    height:.72rem;
+}
+
+#box .box-body{
+    position: absolute;
+    top:.36rem;
+    bottom:0;
+    left: 0;
+    right:0;
+    /*border:1px solid red;*/
+}
+
+#box .box-body .left{
+    position:absolute;
+    width: .2rem;
+    bottom:.2rem;
+    top:.36rem;
+    left:0;
+    background:url(../image/left-line.png) repeat-y left top;
+    background-size: contain;
+}
+
+#box .box-body .left-jiao{
+    position:absolute;
+    width: .2rem;
+    height: .2rem;
+    bottom:0;
+    left:0;
+    background:url(../image/left-bottom-jiao.png) no-repeat left bottom;
+    background-size: contain;
+}
+
+#box .box-body .bottom{
+    position:absolute;
+    height: .2rem;
+    bottom:0rem;
+    left:.2rem;
+    right: .2rem;
+    background:url(../image/bottom-line.png) repeat-x left bottom;
+    background-size: contain;
+}
+
+#box .box-body .right-jiao{
+    position:absolute;
+    width: .2rem;
+    height: .2rem;
+    bottom:0;
+    right:0;
+    background:url(../image/right-bottom-jiao.png) no-repeat left bottom;
+    background-size: contain;
+}
+
+#box .box-body .right{
+    position:absolute;
+    bottom:.2rem;
+    right:0;
+    top:.3rem;
+    width:.2rem;
+    background:url(../image/right-line.png) repeat-y right top;
+    background-size: contain;
+}
+
+#box .box-body .right-top-jiao{
+    position:absolute;
+    width: .2rem;
+    height: .2rem;
+    top:.1rem;
+    right:0;
+    background:url(../image/right-top-jiao.png) no-repeat left bottom;
+    background-size: contain;
+}
+
+#box .box-body .content{
+	padding: .2rem;
+}
+
+#box .box-title .top-line{
+    flex: 1;
+    height: .2rem;
+    margin-top:.46rem;
+    margin-right:.2rem;
+    background:url(../image/top-line.png) repeat-x left top;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,1165 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	<title>瑞阳心语大数据分析平台</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<style>
+		#bottom .mt30{
+			flex: 0 0 24%;
+		}
+		#top .top-left, #top .top-right{
+			flex: 0 0 31.6%;
+		}
+		#top .top-center{
+			width: 34%;
+			text-align: center;
+		}
+		.content{
+            height: 100%;
+        }
+        .content table{
+            width: 100%;
+            max-width: 100%;
+        }
+        .content table thead tr{
+            height: .8rem;
+        }
+
+        .content table tbody tr{
+            height: .8rem;
+        }
+        .content .table-container{
+            max-height: 100%;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .content .in-table-container{
+            
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: -17px;
+
+        }
+        .content .table-header-fixed{
+            position: fixed;
+
+            width: 28.5%;
+        }
+	</style>
+</head>
+<body>
+<img style="position: fixed; top:0; width: 100vw; height: 100vh; bottom:0; left:0; right:0; z-index:1" src="image/bg.png" alt="">
+<div style="position: fixed; top:0; bottom:0; left:0; right:0; z-index:2" id="rootWrap" class="flex flex-center flex-middle" v-cloak>
+
+    <div id="ryxy3">
+
+        <div id="top" class="flex flex-between">
+
+            <!-- 上左 -->
+            <div class="top-left">
+
+                <!-- 盒子 start -->
+                <div id="box" style="height:calc(50% - .15rem)">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>高危人群预警率</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content warning-yy" style="width: 100%;height: 100%;">
+                            <div class="circle" :class="item.classname" v-for="item in circleList">
+                                <div class="pie_left"><div class="circle-left"></div></div>
+                                <div class="pie_right"><div class="circle-right"></div></div>
+                                <div class="mask">
+                                    <div class="export-box"><span class="export">{{item.percent}}</span><span>%</span></div>
+                                    <span class="span-text">{{item.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+                <!-- 盒子 start -->
+                <div id="box" class="mt30" style="height:calc(50% - .15rem)">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>抑郁情绪人群行业差异</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                            <div id="yyqx" style="width: 100%; height: 100%;padding-top: .3rem;padding-bottom: .3rem"></div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+            </div>
+
+            <!-- 上中 -->
+            <div class="top-center">
+
+                <div class="flex flex-center">
+                    <img class="title" src="image/title.png">
+                </div>
+                <div class="func flex flex-between">
+                    <div class="item" v-for="item of helpyjData">
+                       <img :src="item.imgUrl">
+                       <p class="help-num">
+                           <span>&nbsp;{{item.name}}</span>
+                           <strong>{{item.num}}</strong>
+                       </p>
+                    </div>
+                </div>
+
+                <!-- 盒子 start -->
+                <div id="box" class="mt30" style="height:calc(50% + .7rem);">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>求助和预警情况分析</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                           <div id="helpyj" style="width: 100%; height: 100%;padding-top: .3rem;padding-bottom: .3rem"></div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+            </div>
+
+            <!-- 上右 -->
+            <div class="top-right pr">
+                <button type="button" class="analyse pa" onclick="changePage()">心理分析</button>
+                <!-- 盒子 start -->
+                <div id="box" style="height:100%; overflow-y: auto;overflow-x: hidden">
+                    <div class="box-title" style="width: calc(100% + 17px);">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>危机预警</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content" style="width: 100%; height: 100%; overflow: hidden;padding: .5rem .2rem">
+                            <div class='table-container' style="width: 100%;height: 100%;overflow: hidden;">
+                                <div class="in-table-container" id="in-table-container">
+                                    <table class="table-header-fixed">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 18%;">用户名</th>
+                                            <th style="width: 20%;">倾向</th>
+                                            <th style="width: 18%;">来源</th>
+                                            <th style="width: 20%;">内容</th>
+                                            <th style="width: 20%;">时间</th>
+                                        </tr>
+                                    </thead>
+                                    </table>
+                                    <table id="warn-alert-table" style="width: 100%;margin-top: .8rem;">
+                                    <tbody>
+                                        <tr v-for="item of wjyjList">
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.inclination}}</td>
+                                            <td>{{item.source}}</td>
+                                            <td>{{item.content}}</td>
+                                            <td>{{item.time}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+            </div>
+        </div>
+
+        <div id="bottom" class="flex flex-between">
+
+            <!-- 盒子 start -->
+						<div id="box" class="mt30" >
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>预警总分析</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <ul class="warning-analyse">
+                            <li :class="item.classname" v-for="item of yujingList">
+                                <p class="yjtotal">{{item.name}}<span>{{item.totalNum}}</span>次</p>
+                                <div class="progress">
+									<p class="rate"></p>
+									<span class="rate-span">已转正常<em>{{item.value}}</em></span>
+									<span class="percent"></span>
+							  	</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+						<div id="box" class="mt30" >
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>症状自评分析</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content" style="padding:0;margin-top: -.4rem;">
+                        <div id="zzzp" style="width:100%; height: 100%;"></div>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+						<div id="box" class="mt30" >
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>焦虑情绪预警</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <div id="jlqx" style="width:100%; height: 80%;"></div>
+                        <ul class="jlqx-ul clearfix yujing">
+                            <li :class="item.classname" v-for="item of jlqxList">
+                                <p class="yjtotal">{{item.name}}<span>{{item.value}}</span>次</p>
+                                <div class="progress">
+									<p class="rate"></p>
+							  	</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+						<div id="box" class="mt30" >
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>A型行为预警</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <div id="xwyj" style="width:100%; height: 80%;"></div>
+                        <ul class="xwyj-ul clearfix yujing">
+                        	<li :class="item.classname" v-for="item of axwList">
+                                <p class="yjtotal">{{item.name}}<span>{{item.value}}</span>次</p>
+                                <div class="progress">
+									<p class="rate"></p>
+							  	</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script type="text/javascript" src="script/flexible.js"></script>
+<script type="text/javascript" src="../script/jquery.min.js"></script>
+<!-- 引入 ECharts 文件 -->
+<script type="text/javascript" src="../script/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../script/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="../script/function.js"></script>
+<script>
+//初始化vue
+initVue();
+
+function changePage(){
+    window.location.href = '../ry2/index.html';
+}
+
+//初始化vue
+function initVue(){
+    'use strict';
+    Vue.prototype.func = func;
+    window.rootVue = new Vue({
+        el: '#rootWrap',
+        data: {
+        	//高危人群预警率sss
+        	circleList:[
+                {classname: 'circle1', percent: '4.78', name: '总预警率'},
+                {classname: 'circle2', percent: '0.82', name: '重度占比'},
+                {classname: 'circle3', percent: '2.88', name: '中度占比'}
+            ],
+
+            //求助数，预警数
+            helpyjData:[
+                {name: '求助数', num: 1984, 'imgUrl': './image/help-icon.png'},
+                {name: '预警数', num: 4351, 'imgUrl': './image/warning-icon.png'},
+
+            ],
+
+            //危机预警
+            wjyjList:[
+                {name: '韩**', inclination: '失眠', source: '测评', content: '阿森斯失眠量表', time: ''},
+                {name: '赵**', inclination: '抑郁', source: '测评', content: '抑郁自评量表', time: ''},
+                {name: '王**', inclination: '抑郁', source: '咨询', content: '怀疑自己抑郁', time: ''},
+                {name: '于**', inclination: '产后抑郁症', source: '咨询', content: '产后抑郁症', time: ''},
+                {name: '朱**', inclination: '抑郁', source: '问答', content: '工作压力大，感觉抑郁', time: ''},
+                {name: '江**', inclination: '失眠', source: '问答', content: '失眠多梦怎么办', time: ''},
+                {name: '刘**', inclination: '焦虑', source: '测评', content: '焦虑自评量表', time: ''},
+                {name: '纪**', inclination: '失眠', source: '测评', content: '阿森斯失眠量表', time: ''},
+                {name: '魏**', inclination: '失眠', source: '测评', content: '阿森斯失眠量表', time: ''},
+                {name: '赵**', inclination: '抑郁', source: '测评', content: '抑郁自评量表', time: ''},
+                {name: '任**', inclination: '抑郁', source: '测评', content: '抑郁自评量表', time: ''},
+                {name: '高**', inclination: '抑郁', source: '测评', content: '抑郁自评量表', time: ''},
+                {name: '江**', inclination: '睡眠失常', source: '问答', content: '睡眠失常，多梦', time: ''},
+                {name: '张**', inclination: '失眠', source: '咨询', content: '失眠、畏声', time: ''},
+                {name: '孙**', inclination: '抑郁症', source: '问答', content: '抑郁症调节', time: ''},
+                {name: '宋**', inclination: '情绪低落', source: '问答', content: '情绪低落，睡眠不好', time: ''},
+                {name: '袁**', inclination: '焦虑', source: '测评', content: '焦虑自评量表', time: ''},
+                {name: '娄**', inclination: '失眠', source: '测评', content: '阿森斯失眠量表', time: ''},
+                {name: '邵**', inclination: '焦虑', source: '测评', content: '焦虑自评量表', time: ''},
+                {name: '张**', inclination: '失眠', source: '测评', content: '阿森斯失眠量表', time: ''},
+                {name: '曹**', inclination: '情绪压抑', source: '咨询', content: '情绪压抑', time: ''},
+                {name: '王**', inclination: '强迫症', source: '咨询', content: '强迫症，密集恐惧症', time: ''},
+                {name: '王**', inclination: '密集恐惧症', source: '咨询', content: '强迫症，密集恐惧症', time: ''},
+                {name: '付**', inclination: '失眠', source: '问答', content: '失眠严重', time: ''},
+            ],
+
+            //抑郁情绪人群行差异
+            yyqxList:{
+                yyqxName:['服装','医疗服务','机械制造','服装业','教育','建筑业','政府机关','房地产','邮政快递','餐饮'],
+                yyqxTotalNum:[10009, 4039, 50301, 6010, 3098, 11006, 1131,2301,2709,1007],
+                yyqxNum:[38, 22, 20, 20, 16, 12, 12,12,8,8]
+            },
+
+            //求助和预警情况分析
+            helpyjList:{
+                helpyjDate:["10.01", "10.02", "10.03", "10.04", "10.05", "10.06", "10.07", "10.08", "10.09", "10.10", "10.11", "10.12","10.13","10.14","10.15","10.16","10.17","10.18","10.19","10.20","10.21","10.22","10.23","10.24","10.25","10.26","10.27","10.28","10.29","10.30"],
+                helpNum:[0, 0, 0, 0, 3, 3, 5, 6, 8, 12, 15, 15,16, 18, 19, 19, 22, 25, 26, 28, 29, 33, 35, 38, 45, 52, 55, 55, 56, 57],
+                yjNum:[5, 17, 18, 20, 25, 27, 30, 31, 35, 37, 40, 45, 49, 55, 68, 72, 73, 77, 85, 90, 90, 97, 95, 96, 110, 123, 125, 126, 130, 137]
+            },
+
+            //预警总分析
+            yujingList:[
+                {name: '一级预警总数', totalNum: 170, value: 170, classname: "pro1"},
+                {name: '二级预警总数', totalNum: 434, value: 421, classname: "pro2"},
+                {name: '三级预警总数', totalNum: 357, value: 354, classname: "pro3"},
+                {name: '四级预警总数', totalNum: 3390, value: 3362, classname: "pro4"}
+            ],
+
+            //症状自评分析
+            zzzpList:{
+               zzzoName1:[
+                    {value:1.09, name:'一级预警'},
+                    {value:5.37, name:'二级预警'},
+                    {value:19.35, name:'三级预警'},
+                    {value:74.19, name:'四级预警'}
+                ],
+                zzzoName2:[
+                    {value:34.07, name:'躯体化'},
+                    {value:23.55, name:'强迫症状'},
+                    {value:10.21, name:'人际关系敏感'},
+                    {value:12.22, name:'抑郁'},
+                    {value:12.1, name:'焦虑'},
+                    {value:2.54, name:'敌对'},
+                    {value:2.09, name:'恐怖'},
+                    {value:3.22, name:'偏执'},
+                    {value:0, name:'精神病性'}
+                ]
+            },
+
+            //焦虑情绪预警
+            jlqxValue:{
+                value:[68]
+            },
+            jlqxList:[
+                {name: "三级预警", totalNum: 142364, value: 375, classname: 'pro3'},
+                {name: "四级预警", totalNum: 142364, value: 522, classname: 'pro3'}
+            ],
+            
+            //A型行为绪预警
+            axwlValue:{
+                value:[42.6]
+            },
+            axwList:[
+                {name: "一级预警", totalNum: 57682, value: 89, classname: 'pro1'},
+                {name: "二级预警", totalNum: 57682, value: 126, classname: 'pro2'},
+                {name: "三级预警", totalNum: 57682, value: 796, classname: 'pro3'},
+                {name: "四级预警", totalNum: 57682, value: 1445, classname: 'pro4'}
+            ],
+
+        },
+        created:function(){
+
+        },
+        methods:{
+
+            //抑郁情绪人群行差异
+            yyqx:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('yyqx'));
+                var option = {
+                	tooltip : {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                backgroundColor: '#00BCC6'
+                            }
+                        }
+                    },
+                    grid: {
+                        left: '6%',
+                        right: '6%',
+                        top:'15%',
+                        bottom: '0%',
+                        containLabel: true
+                    },
+                    color:['#FF740A','#00c4d6'],
+                    legend: {
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        top: 5,
+                        data: ['抑郁情绪人数','总人数'],
+                        x: 'right',
+                        textStyle: { //图例文字的样式
+                            color: '#fff',
+                            fontSize: 14
+                        }
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            //data : ['服装','医疗服务','机械制造','服装业','教育','建筑业','政府机关','房地产','邮政快递','餐饮'],
+                            data:this.yyqxList.yyqxName,
+                            axisLabel: {
+                                show: true,
+                                textStyle: {
+                                  color: '#fff',
+                                  fontSize: 12
+                                },
+                                interval: 0,
+                                rotate: 40,
+
+                            },
+                            splitLine: {
+                                show: false,   //X网格线
+                                lineStyle:{   //x网格线
+                                    color: '#999999'
+                                }
+                            },
+                            axisLine:{  //x轴线
+                                show: false,
+                                lineStyle: {
+                                    color: '#999999'
+                                }
+                            },
+                            axisTick: {
+                                show:false,
+                                lineStyle: {
+                                    color: '#AAAAAA'
+                                }
+                            },
+                        }
+                    ],
+                    yAxis : [
+                        {
+                        	type : 'value',
+                            splitNumber:4,
+                           // max: 15000,
+                            nameTextStyle: {
+                                color: '#AAAAAA'
+                            },
+                            axisLine:{
+                                show: false,
+                                lineStyle: {
+                                    color: 'rgba(255,255,255,.5)'
+                                }
+                            },
+                            splitLine: {
+                                show: true,   //X网格线
+                                lineStyle:{   //x网格线
+                                    color: 'rgba(11,200,217,.2)'
+                                }
+                            },
+                            axisTick:{
+                                show:false,
+                                lineStyle: {
+                                    color: '#AAAAAA'
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name: '抑郁情绪人数',
+                            type: 'bar',
+                            stack: '1',
+                            barWidth : 16,
+                            //data: [38, 22, 20, 20, 16, 12, 12,12,8,8]
+                            data:this.yyqxList.yyqxNum
+                        },
+                        {
+                            name: '总人数',
+                            type: 'bar',
+                            stack: '1',
+                            barWidth : 16,
+                            //data: [10009, 4039, 50301, 6010, 3098, 11006, 1131,2301,2709,1007]
+                            data:this.yyqxList.yyqxTotalNum
+                        },
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+
+            //求助和预警情况分析
+            helpyj:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('helpyj'));
+                var option = {
+                	tooltip : {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                backgroundColor: '#00BCC6'
+                            }
+                        }
+                    },
+                    grid: {
+                        left: '6%',
+                        right: '6%',
+                        top: '20%',
+                        bottom: '0%',
+                        containLabel: true
+                    },
+                    legend: {
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        top: 5,
+                        data:[{name:'求助数',icon:'rect'},{name:'预警数',icon:'rect'}],//分别修改legend小图标
+                        x: 'right',
+                        textStyle: { //图例文字的样式
+                            color: '#fff',
+                            fontSize: 14
+                        }
+                    },
+                   xAxis: [
+                        {
+                            type: 'category',
+                            axisTick: {
+                                show: false,
+                                lineStyle: {
+                                    color: '#AAAAAA'
+                                }
+                            },
+                            axisLine:{
+                                show: false,
+                                lineStyle: {
+                                    color: 'rgba(255,255,255,.5)'
+                                }
+                            },
+                            splitLine: {
+                                show: false,   //X网格线
+                                lineStyle: {   //x网格线
+                                    color: '#999999'
+                                }
+                            },
+                            axisLabel: {
+                                show: true,
+                                textStyle: {
+                                  color: '#fff',
+                                  fontSize: 12
+                                },
+                                interval: 1,
+                                rotate: 40
+                            },
+                            //data: ["10.01", "10.02", "10.03", "10.04", "10.05", "10.06", "10.07", "10.08", "10.09", "10.10", "10.11", "10.12","10.13","10.14","10.15","10.16","10.17","10.18","10.19","10.20","10.21","10.22","10.23","10.24","10.25","10.26","10.27","10.28","10.29","10.30"]
+                            data:this.helpyjList.helpyjDate
+                        }
+
+                    ],
+                   yAxis : [
+                        {
+                            type : 'value',
+                            //max: 80,
+                            splitNumber:4,
+                            nameTextStyle: {
+                                color: '#AAAAAA'
+                            },
+                            axisLine:{
+                                show: false,
+                                lineStyle: {
+                                    color: 'rgba(255,255,255,.5)'
+                                }
+                            },
+                            splitLine: {
+                                show: true,   //X网格线
+                                lineStyle:{   //x网格线
+                                    color: 'rgba(11,200,217,.2)'
+                                }
+                            },
+                            axisTick:{
+                                show: false,
+                                lineStyle: {
+                                    color: '#AAAAAA'
+                                }
+                            }
+                        }
+                    ],
+                   series: [
+                        {
+                            name: '求助数',
+                            type: 'line',
+                            symbol:'pin',    //设定为实心点
+                            symbolSize: 12,   //设定实心点的大小
+                            animation: false,
+                            itemStyle: { //圆圈样式
+                                color:'#0593FF',
+                            },
+                            lineStyle: {//线条样式
+                                width: 1,
+                                color:'#0593FF'
+                            },
+                            //data: [0, 0, 0, 0, 3, 3, 5, 6, 8, 12, 15, 15,16, 18, 19, 19, 22, 25, 26, 28, 29, 33, 35, 38, 45, 52, 55, 55, 56, 57]
+                            data:this.helpyjList.helpNum
+                        },
+                        {
+                            name: '预警数',
+                            type: 'line',
+                            smooth: true,
+                            showAllSymbol: true,
+                            symbol:'pin',    //设定为实心点
+                            symbolSize: 12,   //设定实心点的大小
+                            animation: false,
+                            itemStyle: { //圆圈样式
+                                color:'#FF5C61',
+                            },
+                            lineStyle:{//线条样式
+                                width: 1,
+                                color: '#FF5C61'
+                            },
+                            //data: [5, 17, 18, 20, 25, 27, 30, 31, 35, 37, 40, 45, 49, 55, 68, 72, 73, 77, 85, 90, 90, 97, 95, 96, 110, 123, 125, 126, 130, 137]
+                            data:this.helpyjList.yjNum
+                        }
+
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+
+            },
+
+            //症状自评分析
+            zzzp:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('zzzp'));
+                var option = {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    },
+                    legend: {
+                        itemWidth: 12,
+                        itemHeight: 12,
+                        bottom: 0,
+                        orient: 'horizontal',
+                        data: ['躯体化','强迫症状','人际关系敏感','抑郁','焦虑','敌对','恐怖','偏执','精神病性'],
+                        textStyle: { //图例文字的样式
+                            color: '#fff',
+                            fontSize: 10
+                        }
+                    },
+                    color: ['#FF5C61','#FF740A','#FFC100','#00c4d6','#FF7029','#FFA033','#FFC02E','#5AB10D','#18C86A','#63D498','#75D1FF','#05BCFF','#0593FF'],
+                    series: [
+                        {
+                            name: '症状自评分析',
+                            type: 'pie',
+                            radius: [0,'40%'],
+                            label: {
+                                normal: {
+                                    position: 'outside'
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: true,
+                                    length: 20,
+                                    length2: 10
+                                }
+                            },
+                            /*data:[
+                                {value:1.09, name:'一级预警'},
+                                {value:5.37, name:'二级预警'},
+                                {value:19.35, name:'三级预警'},
+                                {value:74.19, name:'四级预警'}
+                            ],*/
+                            data:this.zzzpList.zzzoName1,
+
+                            textStyle: { //图例文字的样式
+                                color: '#fff',
+                                fontSize: 12
+                            }
+                        },
+                        {
+                            name:'症状自评分析',
+                            type:'pie',
+                            radius: ['50%', '60%'],
+                            label: {
+                                normal: {
+                                    show: false,
+                                    formatter: '{b}\n{per|{d}%}',
+                                    rich: {
+                                        a: {
+                                            color: '#fff',
+                                            lineHeight: 22,
+                                            align: 'center'
+                                        },
+                                        b: {
+                                            fontSize: 12,
+                                            lineHeight: 33
+                                        },
+                                        per: {
+                                            color: '#fff',
+                                            padding: [2, 4],
+                                            borderRadius: 2
+                                        }
+                                    }
+                                }
+                            },
+                            /*data:[
+                                {value:34.07, name:'躯体化'},
+                                {value:23.55, name:'强迫症状'},
+                                {value:10.21, name:'人际关系敏感'},
+                                {value:12.22, name:'抑郁'},
+                                {value:12.1, name:'焦虑'},
+                                {value:2.54, name:'敌对'},
+                                {value:2.09, name:'恐怖'},
+                                {value:3.22, name:'偏执'},
+                                {value:0, name:'精神病性'}
+                            ]*/
+                            data:this.zzzpList.zzzoName2
+                        }
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+
+            //焦虑情绪预警
+            jlqx:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('jlqx'));
+                var option = {
+                    tooltip : {
+                        formatter: "{a} <br/>{c} {b}"
+                    },
+                    series : [
+                        {
+                            name: '速度',
+                            type: 'gauge',
+                            min: 0,
+                            max: 100,
+                            splitNumber: 10,
+                            radius: '95%',
+                            splitLine: {
+                            	length: 20,
+                            	lineStyle: {
+                            		width: 1.5,
+                            		color: '#00c4d6'
+                            	}
+                            },
+                            axisLine: {            // 坐标轴线
+                                lineStyle: {       // 属性lineStyle控制线条样式
+                                    color: [[1, '#00c4d6']],
+                                    width: 0.01,
+                                }
+                            },
+                            axisTick: {            // 坐标轴小标记
+                                length :15,        // 属性length控制线长
+                                lineStyle: {       // 属性lineStyle控制线条样式
+                                    color: '#00c4d6',
+                                }
+                            },
+                            pointer: {
+                            	width: 3,
+                            	length: '60%'
+                            },
+                            title: {
+                                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                                    fontWeight: 'bolder',
+                                    fontSize: 20,
+                                    color: '#fff',
+                                    shadowColor : '#fff', //默认透明
+                                    shadowBlur: 10
+                                }
+                            },
+                            detail: {
+                                formatter: "{score|{value}%}\n{name|焦虑指数}",
+                                offsetCenter: [0, "50%"],
+                                rich: {
+                                    score: {
+                                        color: "#fff",
+                                        fontSize: 20
+                                    },
+                                    name: {
+                                        height: 25,
+                                        color: "#fff",
+                                        fontSize: 13
+                                    }
+                                }
+                            },
+                            //data:[{value: 68}]
+                            data:this.jlqxValue.value
+                        },
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+
+            //A型行为预警
+            xwyj:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('xwyj'));
+                var option = {
+                    tooltip: {
+                        formatter: "{a} <br/>{c} {b}"
+                    },
+                    series: [
+                        {
+                            name: '速度',
+                            type: 'gauge',
+                            min: 0,
+                            max: 100,
+                            splitNumber: 10,
+                            radius: '95%',
+                            splitLine: {
+                            	length: 20,
+                            	lineStyle: {
+                            		width: 1.5,
+                            		color: '#FF740A'
+                            	}
+                            },
+                            axisLine: {            // 坐标轴线
+                                lineStyle: {       // 属性lineStyle控制线条样式
+                                    color: [[1, '#FF740A']],
+                                    width: 0.01,
+                                }
+                            },
+                            axisTick: {            // 坐标轴小标记
+                                length :15,        // 属性length控制线长
+                                lineStyle: {       // 属性lineStyle控制线条样式
+                                    color: '#FF740A',
+                                }
+                            },
+                            pointer: {
+                            	width: 3,
+                            	length: '60%'
+                            },
+                            title : {
+                                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                                    fontWeight: 'bolder',
+                                    fontSize: 12,
+                                    color: '#fff',
+                                    shadowColor : '#fff', //默认透明
+                                    shadowBlur: 10
+                                }
+                            },
+                            detail: {
+                                formatter : "{score|{value}%}\n{name|A型行为指数}",
+                                offsetCenter: [0, "50%"],
+                                rich : {
+                                    score : {
+                                        color : "#fff",
+                                        fontSize : 20
+                                    },
+                                    name : {
+                                        height : 25,
+                                        color : "#fff",
+                                        fontSize : 13
+                                    }
+                                }
+                            },
+                            //data:[{value: 42.6}]
+                            data:this.axwlValue.value
+                        },
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            }
+        },
+
+        mounted:function(){
+
+            //自动设置框宽度
+            // $("#box .box-title .top-line").css('width',($("#box").width() - $("#box .box-title .left").width() - $("#box .box-title .center").width() - $("#box .box-title .right").width())/100+'rem')
+
+            //抑郁情绪人群行业差异
+            this.yyqx();
+
+            //求助预警
+            this.helpyj();
+
+            //症状自评分析
+            this.zzzp();
+
+            //焦虑情绪预警
+            this.jlqx();
+
+            //A型行为预警
+            this.xwyj();
+
+        }
+    });
+}
+
+$(function(){
+	//预警总分析进度条
+	$(".warning-analyse li").each(function(){
+		//总预警次数
+		var totalNum=$(this).find('.yjtotal span').text();
+		//已转正常次数
+		var normalNum=$(this).find('.rate-span em').text();
+		//进度条占比长度
+	    var $rate = $(this).find('.progress .rate');
+	    //百分比值
+	    var $percent=$(this).find('.progress .percent');
+	    //进度条总长度
+	    var proWidth = $(this).find('.progress').width(); //400
+	    //初始化width
+	    var ratewidth = 0, percentWidth = 0;
+
+	    setInterval(function() {
+	        ratewidth = Math.floor((normalNum / totalNum) * proWidth);
+	        $rate.animate({width:ratewidth});
+	        $percent.html(Math.floor((normalNum / totalNum)*100) + '%');
+	        // $percent.css("left",Math.floor((normalNum / totalNum)*100-15) + '%')
+	    }, 100);
+	});
+
+	//焦虑情绪预警/A型行为预警进度条
+	$(".yujing li").each(function(){
+		//总预警次数
+		var totalNum=$(this).find('.yjtotal span').text();
+		//进度条占比长度
+		var $rate = $(this).find('.progress .rate');
+		//百分比值
+		var $percent=$(this).find('.progress .percent');
+		//进度条总长度
+		var proWidth = $(this).find('.progress').width(); //400
+		//初始化width
+		var ratewidth = 0, percentWidth = 0;
+		setInterval(function() {
+		    ratewidth = Math.floor((totalNum/142364) * proWidth);
+		    $rate.animate({width:ratewidth});
+		}, 100);
+	});
+
+    //高危人群预警率圆形进度条
+    $('.circle').each(function(index, el) {
+        var num = $(this).find('span.export').text() * 3.6;
+        if (num<=180) {
+            $(this).find('.circle-right').css('transform', "rotate(" + num + "deg)");
+        } else {
+            $(this).find('.circle-right').css('transform', "rotate(180deg)");
+            $(this).find('.circle-left').css('transform', "rotate(" + (num - 180) + "deg)");
+        };
+    });
+
+
+    var scrollTop = 0;
+    var tableH = $('#warn-alert-table').height();
+    var tableContainerH = $('#in-table-container').height();
+    var canMoveHeight = tableH - tableContainerH;
+
+    // setTimeout(function (){
+    setInterval(function(){
+        if(canMoveHeight - scrollTop > 1){
+            scrollTop++;
+            $('#in-table-container').scrollTop(scrollTop);
+        }else{
+            // console.log(canMoveHeight - scrollTop > 1);
+            scrollTop = 0;
+            $('#in-table-container').scrollTop(scrollTop);
+        }
+    },100)
+    
+    // },3000)
+
+//     function autoScrollLine() {
+//         if(box&&parent){
+//             if(box.scrollTop >= parentsLength){
+//                 box.scrollTop=0;
+//             }else{
+//                 var tempScrollTop = box.scrollTop;
+//                 box.scrollTop++;
+//                 if(tempScrollTop == box.scrollTop){
+// //                    clearInterval(timer);
+//                     circleTimer = setTimeout(function(){
+//                         box.scrollTop=0;
+// //                        timer = setInterval(autoScrollLine,30)
+//                     },3000);
+//                 }
+//             }     
+//             /*判断滚动的距离刚好为一条公告的高度时停掉定时器，       隔3s之后重新启动定时器即可实现公告滚动停留效果 */
+//             if(box.scrollTop%parent==0){
+// //                console.log(box.scrollTop);
+// //                console.log(box.offsetHeight);
+// //                console.log(parentsLength);
+//                 clearInterval(timer);
+//                 circleTimer = setTimeout(function(){
+//                     timer = setInterval(autoScrollLine,30)
+//                 },3000);
+//             }
+//         }
+//     }
+
+    
+
+})
+
+</script>
+</html>

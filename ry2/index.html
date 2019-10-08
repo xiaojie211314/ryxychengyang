@@ -1,0 +1,1498 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+<title>瑞阳心语大数据分析平台</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<style>
+    #bottom .mt30{
+      flex: 0 0 24%;
+    }
+    #top .top-left, #top .top-right{
+      flex: 0 0 32%;
+    }
+    #top .top-center{
+      width: 34%;
+      text-align: center;
+    }
+    .content{
+      height: 100%;
+    }
+</style>
+</head>
+<body>
+<img style="position: fixed; top:0; width: 100vw; height: 100vh; bottom:0; left:0; right:0; z-index:1" src="image/bg.png" alt="">
+<div style="position: fixed; top:0; bottom:0; left:0; right:0; z-index:2" id="rootWrap" class="flex flex-center flex-middle" v-cloak>
+
+    <div id="ryxy">
+
+        <div id="top" class="flex flex-between">
+
+            <!-- 上左 -->
+            <div class="top-left">
+
+                <!-- 盒子 start -->
+                <div id="box" style="height: 69.6%;">
+
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>年龄分布</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                            <div class="ratioTitle clearfix" style="margin-top: .1rem;">
+                                <p class="fl pn">男</p>
+                                <div class="nan fl"></div>
+                                <div class="nv fl"></div>
+                                <p class="fl pv">女</p>
+                            </div>
+                            <ul>
+
+                                <li v-for="(vo,index) in age" :key="index" class="clearfix">
+                                    <div class="fl ls clearfix">
+                                        <div class="ls-bg fr" :style='{width:vo.boy === 0 ? 0 : (vo.boy/(vo.boy+vo.girl))*100+"%",height:"0.15rem",background:"#00c4d6"}'></div>
+                                        <p class="fr" style="text-align: right">{{vo.boy}}</p>
+                                    </div>
+
+                                    <div class="fl text">{{vo.duan}}</div>
+
+                                    <div class="fl cs clearfix">
+                                        <div class="cs-bg fl" :style='{width:vo.girl === 0 ? 0 : (vo.girl/(vo.boy+vo.girl))*100+"%",height:"0.15rem",background:"#FF892E"}'></div>
+                                        <p class="fl">{{vo.girl}}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+                <!-- 盒子 start -->
+                <div id="box" class="mt30" style="height: calc(100% - 69.6% - .3rem);">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>性别分布</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                            <div class="xbfb clearfix">
+                                <div class="fl">
+                                    <img src="image/nan.png">
+                                </div>
+                                <div class="bl fl clearfix">
+                                    <div class="nan fl">36%</div>
+                                    <div class="line fl"></div>
+                                    <div class="nv fl">64%</div>
+                                </div>
+                                <div class="fl">
+                                    <img src="image/nv.png">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+            </div>
+
+            <!-- 上中 -->
+            <div class="top-center">
+                <img class="title" src="image/title.png">
+                <div class="numberpeople clearfix" >
+                    <div class="zrs fl">
+                        <em>总人数</em>
+                        <p>{{numberpeople.allPeople}}</p>
+                    </div>
+                    <div class="app fl">
+                        <em>App端人数</em>
+                        <p>{{numberpeople.appPeople}}</p>
+                    </div>
+                    <div class="gzh fl">
+                        <em>公众号人数</em>
+                        <p>{{numberpeople.publicAddresspeople}}</p>
+                    </div>
+                </div>
+                <div class="ditu" style='height: calc(100% - 2.21rem);margin-top: .15rem'>
+                        <div class="jht">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">棘洪滩</a>
+                        </div>
+                        <div class="cy">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">城阳</a>
+                        </div>
+                        <div class="xfz">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">惜福镇</a>
+                        </div>
+                        <div class="sm">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">上马</a>
+                        </div>
+                        <div class="lt">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">流亭</a>
+                        </div>
+                        <div class="xz">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">夏庄</a>
+                        </div>
+                        <div class="ht">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">河套</a>
+                        </div>
+                        <div class="hd">
+                            <div class="water1"></div>
+                            <div class="water2"></div>
+                            <div class="water3"></div>
+                            <div class="water4"></div>
+                            <a class="ylBtn" href="javascript:;">红岛</a>
+                        </div>
+                        <!-- <div id="map" style="width:100%;height:100%;"></div> -->
+                    </div>
+            </div>
+
+            <!-- 上右 -->
+            <div class="top-right" style="position: relative">
+                <button  onclick="changePage()">
+                    <img src="image/baojing.png">
+                    预警分析
+                </button>
+                <!-- 盒子 start -->
+                <div id="box" style="height: calc(50% - .15rem);">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>会员注册分析</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                            <div id="huiyuan" style="width:100%; height: 100%;padding-top: .3rem;padding-bottom: .2rem"></div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+                <!-- 盒子 start -->
+                <div id="box" class="mt30" style="height: calc(50% - .15rem);">
+                    <div class="box-title">
+                        <!-- 左边 -->
+                        <div class="left"></div>
+                        <!-- 中间 标题 -->
+                        <div class="center">
+                            <h3>活跃度分析</h3>
+                        </div>
+                        <!-- 右边 -->
+                        <div class="right"></div>
+                        <!-- 右边 线 -->
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="box-body">
+                        <!-- 中间内容 -->
+                        <div class="content">
+                            <div id="myChart2" style="width:100%; height: 100%;padding-top: .3rem;padding-bottom: .3rem"></div>
+                        </div>
+                        <!-- 四边 + 角 -->
+                        <div class="left"></div>
+                        <div class="left-jiao"></div>
+                        <div class="bottom"></div>
+                        <div class="right-jiao"></div>
+                        <div class="right"></div>
+                        <div class="right-top-jiao"></div>
+                    </div>
+                </div>
+                <!-- 盒子 end -->
+
+            </div>
+
+        </div>
+
+        <div id="bottom" class="flex flex-between" >
+
+            <!-- 盒子 start -->
+            <div id="box" class="mt30" >
+
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>行业分布</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                      <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                        <div id="hyfb" style="width:100%; height: 100%;padding-top: .3rem"></div>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+            <div id="box" class="mt30" >
+
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>关注领域</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <div id="gzly" style="width:100%; height: 100%;"></div>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+            <div id="box" class="mt30" >
+
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>心理主题热度分析</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <div id="xlzt" style="width:100%; height: 100%;"></div>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+            <!-- 盒子 start -->
+            <div id="box" class="mt30" >
+
+                <div class="box-title">
+                    <!-- 左边 -->
+                    <div class="left"></div>
+                    <!-- 中间 标题 -->
+                    <div class="center">
+                        <h3>所倾向方式</h3>
+                    </div>
+                    <!-- 右边 -->
+                    <div class="right"></div>
+                    <!-- 右边 线 -->
+                    <div class="top-line"></div>
+                </div>
+                <div class="box-body">
+                    <!-- 中间内容 -->
+                    <div class="content">
+                        <div id="qx" style="width:100%; height: 100%;padding-bottom: .3rem"></div>
+                    </div>
+                    <!-- 四边 + 角 -->
+                    <div class="left"></div>
+                    <div class="left-jiao"></div>
+                    <div class="bottom"></div>
+                    <div class="right-jiao"></div>
+                    <div class="right"></div>
+                    <div class="right-top-jiao"></div>
+                </div>
+            </div>
+            <!-- 盒子 end -->
+
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script type="text/javascript" src="script/flexible.js"></script>
+<script type="text/javascript" src="../script/jquery.min.js"></script>
+<!-- 引入 ECharts 文件 -->
+<script type="text/javascript" src="../script/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../script/function.js"></script>
+<script src="../script/echarts/map/js/china.js"></script>
+<script>
+//初始化vue
+initVue();
+
+function changePage(){
+    window.location.href = '../ry3/index.html';
+}
+
+//初始化vue
+function initVue(){
+    'use strict';
+    Vue.prototype.func = func;
+    window.rootVue = new Vue({
+        el: '#rootWrap',
+        data: {
+            //人数
+            numberpeople: {
+                allPeople: '150251', //总人数
+                appPeople: '140702', //APP端人数
+                publicAddresspeople: '11174' //公众号人数
+            },
+            //年龄分布
+            age: [
+                { boy: 0, girl: 0, duan: ">70", all: 40000 },
+                { boy: 42, girl: 30, duan: "60-69", all: 40000 },
+                { boy: 276, girl: 247, duan: "50-59", all: 40000 },
+                { boy: 21800, girl: 26700, duan: "40-49", all: 40000 },
+                { boy: 30001, girl: 32106, duan: "30-39", all: 40000 },
+                { boy: 10763, girl: 14400, duan: "20-29", all: 40000 },
+                { boy: 2016, girl: 2321, duan: "＜20", all: 40000 }
+            ],
+            //会员注册分析
+            menbers: {
+                //名称
+                menbersName: ['汇总', '当天', '近一天', '近二天', '近三天', '近四天', '近五天', '近六天', '近七天', ],
+                //辅助
+                assist: [0, 0, 400, 800, 2500, 5900, 9500, 13500, 17600],
+                //总计
+                aggregate: [21900],
+                //新增人数
+                newlyIncareased: [0, 400, 400, 1700, 3400, 3600, 4000, 4100, 4300],
+            },
+            //活跃度分析
+            liveness: {
+                //名称
+                livenessName: ['当天', '近1天', '近2天', '近3天', '近4天', '近5天', '近6天', ],
+                //会员数
+                members: [137, 176, 326, 1250, 1790, 2239, 2735],
+                //尊享会员数
+                respectingMembers: [126, 144, 277, 875, 1022, 1443, 1617],
+                //认证会员数
+                certifiedMembers: [20, 27, 29, 36, 37, 40, 41],
+            },
+            //行业分布
+            industry: {
+                //行业名称
+                industryName: ['机械制造', '建筑业', '服务', '服装业', '医疗服务', '教育', '政府机关', '房地产', '邮政快递', '餐饮'],
+                //人数
+                numbers: [50301, 11006, 10009, 6010, 4039, 3098, 1131, 2301, 2709, 1007],
+
+            },
+
+            //关注领域
+            follow: {
+                //领域名称
+                followName: ['亲子', '青春期', '婚恋', '更年期', '心身健康保障', '职业生涯规划', '健康管理', '国学', '国防', '文化'],
+                followNum: [
+                    { value: 60008, name: '亲子' },
+                    { value: 40039, name: '青春期' },
+                    { value: 41096, name: '婚恋' },
+                    { value: 31069, name: '更年期' },
+                    { value: 30981, name: '心身健康保障' },
+                    { value: 17000, name: '职业生涯规划' },
+                    { value: 16000, name: '健康管理' },
+                    { value: 13000, name: '国学' },
+                    { value: 8700, name: '国防' },
+                    { value: 4000, name: '文化' },
+                ]
+            },
+            //心理主题热度分析
+            psychology: {
+                //
+                psychologyName: [
+                    { text: '婚恋家庭', max: 40000, color: '#fff', },
+                    { text: '亲子教育', max: 40000, color: '#fff', },
+                    { text: '人际交往', max: 40000, color: '#fff', },
+                    { text: '情绪问题', max: 40000, color: '#fff', },
+                    { text: '职场心理', max: 40000, color: '#fff', },
+                    { text: '心理健康', max: 40000, color: '#fff', },
+                    { text: '个人成长', max: 40000, color: '#fff', },
+                ],
+                //次数
+                psychologyNum: [{
+                    value: [30985, 36109, 21601, 23091, 24091, 10963, 11105],
+                    name: '心理主题热度分析'
+                }]
+            },
+
+            //所倾向方式
+            inclination: {
+                //方式
+                mode: [{
+                        value: 103,
+                        name: '图文咨询' + '  ' + 103,
+                        itemStyle: {
+                            borderColor: '#000'
+                        }
+                    },
+                    {
+                        value: 201,
+                        name: '电话咨询' + '  ' + 201,
+                        itemStyle: {
+                            borderColor: '#000'
+                        }
+                    },
+                    {
+                        value: 474,
+                        name: '视频咨询' + '  ' + 474,
+                        itemStyle: {
+                            borderColor: '#000'
+                        }
+                    },
+                    {
+                        value: 1206,
+                        name: '问答咨询' + '  ' + 1206,
+                        itemStyle: {
+                            borderColor: '#000'
+                        }
+                    },
+
+                ]
+            },
+            mapData: {
+                //会员
+                members: [
+                    { name: '北京', value: '12569' },
+                    { name: '上海', value: '5432' },
+                    { name: '天津', value: '35642' },
+                    { name: '重庆', value: '1653' },
+                    { name: '黑龙江', value: '768' },
+                    { name: '吉林', value: '962' },
+                    { name: '辽宁', value: '583' },
+                    { name: '内蒙古', value: '4996' },
+                    { name: '河北', value: '6109' },
+                    { name: '新疆', value: '938' },
+                    { name: '甘肃', value: '15630' },
+                    { name: '青海', value: '6469' },
+                    { name: '陕西', value: '9643' },
+                    { name: '宁夏', value: '1980' },
+                    { name: '河南', value: '12568' },
+                    { name: '山东', value: '298762' },
+                    { name: '山西', value: '7035' },
+                    { name: '安徽', value: '1362' },
+                    { name: '湖北', value: '1896' },
+                    { name: '湖南', value: '2789' },
+                    { name: '江苏', value: '3023' },
+                    { name: '四川', value: '1298' },
+                    { name: '贵州', value: '613' },
+                    { name: '云南', value: '840' },
+                    { name: '广西', value: '301' },
+                    { name: '西藏', value: '169' },
+                    { name: '浙江', value: '5692' },
+                    { name: '江西', value: '5301' },
+                    { name: '广东', value: '9498' },
+                    { name: '福建', value: '864' },
+                    { name: '海南', value: '526' },
+                ],
+                //咨询师
+                consultant: [
+                    { name: '北京', value: '29' },
+                    { name: '上海', value: '12' },
+                    { name: '天津', value: '11' },
+                    { name: '重庆', value: '4' },
+                    { name: '黑龙江', value: '4' },
+                    { name: '吉林', value: '5' },
+                    { name: '内蒙', value: '1' },
+                    { name: '河北', value: '12' },
+                    { name: '甘肃', value: '5' },
+                    { name: '青海', value: '5' },
+                    { name: '陕西', value: '13' },
+                    { name: '河南', value: '15' },
+                    { name: '山东', value: '45' },
+                    { name: '山西', value: '7' },
+                    { name: '安徽', value: '8' },
+                    { name: '湖北', value: '3' },
+                    { name: '湖南', value: '4' },
+                    { name: '江苏', value: '9' },
+                    { name: '四川', value: '10' },
+                    { name: '贵州', value: '5' },
+                    { name: '云南', value: '4' },
+                    { name: '浙江', value: '10' },
+                    { name: '江西', value: '5' },
+                    { name: '广东', value: '15' },
+                ],
+                //讲师
+                teacher: [
+                    { name: '北京', value: '48' },
+                    { name: '上海', value: '12' },
+                    { name: '天津', value: '11' },
+                    { name: '黑龙江', value: '4' },
+                    { name: '吉林', value: '5' },
+                    { name: '内蒙古', value: '1' },
+                    { name: '河北', value: '12' },
+                    { name: '陕西', value: '4' },
+                    { name: '河南', value: '15' },
+                    { name: '山东', value: '40' },
+                    { name: '山西', value: '4' },
+                    { name: '安徽', value: '3' },
+                    { name: '湖北', value: '3' },
+                    { name: '湖南', value: '4' },
+                    { name: '江苏', value: '9' },
+                    { name: '四川', value: '1' },
+                    { name: '浙江', value: '8' },
+                    { name: '江西', value: '5' },
+                    { name: '广东', value: '20 ' },
+                ],
+            }
+
+     },
+        created:function(){
+
+        },
+        methods:{
+            //行业分布
+            hyfb:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('hyfb'));
+
+                var option = {
+                    color:['#0BC8D9'],
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    grid: {
+                        top:"0",
+                        left: '3%',
+                        right: '10%',
+                        bottom: '0',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'value',
+                        boundaryGap: [0, 0.01],
+                        axisLabel: {
+                                show: true,
+                                textStyle: {
+                                  color: '#999999',
+                                  fontSize: 12
+                                },
+                                interval: 0,
+                                rotate: 40,
+
+                            },
+                        axisLine:{  //x轴线
+                            show:false
+                        },
+                        splitLine: {
+                            show:true,   //X网格线
+                            lineStyle:{   //x网格线
+                                color: 'rgba(255,255,255,.2)'
+                            }
+                        },
+                        axisTick:{
+                            show:false
+                        },
+                        name:"（个数）",
+                        nameLocation:"start",
+                        nameTextStyle:{
+                            color:'#999999',
+                            padding:[27,0,0,0]
+                        }
+                    },
+                    yAxis: {
+                        type: 'category',
+//                      data: ['公益组织','服装业','服务','房地产','电讯业','宾馆','餐饮','能源','采矿','保险业'],
+						data:this.industry.industryName,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#fff',  //更改坐标轴文字颜色
+                            }
+                        },
+                        axisLine:{  //x轴线
+                            show:false
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisTick:{
+                            show:false
+                        }
+                    },
+                    series: [
+                        {
+                            type: 'bar',
+                            barWidth : 16,//柱图宽度
+//                          data: [315,401,432, 689, 712, 768, 862, 954,1000,1103]
+							data:this.industry.numbers,
+                        },
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+            //活跃度分析
+            huoyue:function(){
+                // var that = this;
+                // var x = '', y = '', y2 = '', y3 = '';
+                // switch(that.active){
+                //     //实时
+                //     case "0":
+                //         x = ['00:00','02:00','04:00','06:00','08:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'];
+                //         y = [32, 	21, 	98, 	1021	, 1800	, 1321	, 1011, 	986	, 986	, 1789, 	4089, 	3001 ,32];
+                //         y2 = [45, 	12, 	9	, 452, 	210, 	386, 	268, 	211, 	139	, 201	, 450	, 302 ,45];
+                //         y3 = [89, 	8, 	56, 	986, 	1032	, 1152	, 921	, 1120, 	762	, 1681, 	3786	, 2012 ,89];
+                //         break;
+                //
+                //     //近7天
+                //     case "1":
+                //         x = this.getAll(this.sevenDays().start,this.sevenDays().end);
+                //         y = [30680, 	31896	, 28969	, 46953	, 39682, 	91065	, 98425];
+                //         y2 = [120	, 135	, 107	, 215, 	189	, 392, 	405];
+                //         y3 = [21125	, 25036	, 25469	, 30965	, 21856	, 89764, 	94428];
+                //         break;
+                //
+                //     //近30天
+                //     case "2":
+                //         x = this.thirtyDays();
+                //         y = [96521, 	98643	, 89632, 	178180	, 168236, 	84962];
+                //         y2 = [421, 	431	, 401, 	766	, 502	, 301];
+                //         y3 = [60562	, 75210	, 70423	, 124451	, 116952	, 70329];
+                //         break;
+                //
+                //     //近半年
+                //     case "3":
+                //         x = this.getMonths();
+                //         y = [240056, 	264900	, 297803	, 300029, 	301968, 	321989];
+                //         y2 = [296	, 285, 	405	, 429, 	432, 	450];
+                //         y3 = [236940 , 254003	, 286435, 	297860, 	300096, 	305608];
+                //         break;
+                // }
+
+                // 基于准备好的dom，初始化echarts实例
+                let myChart = echarts.init(document.getElementById('myChart2'))
+                // 绘制图表
+                myChart.setOption({
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                backgroundColor: '#00BCC6'
+                            }
+                        }
+                    },
+                    legend: {
+                        itemWidth: 15,
+                        itemHeight: 15,
+                        right:20,
+                        orient: 'horizontal',
+                        // color:['#FF8426','#00c4d6','#0A95FF'],
+                        data:['会员','认证会员','尊享会员'],
+                        textStyle:{
+                            color: '#fff'
+                        },
+                        icon:'roundRect',
+                    },
+                    grid: {
+                        left: '6%',
+                        right: '6%',
+                        top:'20%',
+                        bottom: '0%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type : 'category',
+                            boundaryGap: false,
+                            // data : ['当天','近1天','近2天','近3天','近4天','近5天','近6天',],
+                            data:this.liveness.livenessName,
+                            // data : x,
+                            // nameTextStyle: {
+                            //     color: '#fff'
+                            // },
+                            axisLabel: {
+                                show: true,
+                                // fontWeight:'bold',
+                                fontSize:'13',
+                                textStyle: {
+                                    color: '#fff' //文字颜色
+                                }
+                            },
+                            axisLine:{  //x轴线
+                                show:false,
+                                lineStyle: {
+                                    color: '#999999'
+                                }
+                            },
+                            splitLine: {
+                                show:false,   //X网格线
+                                lineStyle:{   //x网格线
+                                    color: '#999999'
+                                }
+                            },
+                            axisTick:{
+                                show:false,
+                                lineStyle: {
+                                    color: '#AAAAAA'
+                                }
+                            },
+                            // name:"（万元）",
+                            nameLocation:"start",
+                            nameTextStyle:{
+                                color:'rgba(255,255,255,.5)',
+                                padding:[30,-1.5,0,0]
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type : 'value',
+                            scale : true,
+                            // max : 150,
+                            // min : 0,
+                            splitNumber : 3,
+                            nameTextStyle: {
+                                color: 'rgba(11,200,217,.2)'
+                            },
+                            axisLine:{
+                                show:false,
+                                lineStyle: {
+                                    color: 'rgba(255,255,255,.5)'
+                                }
+                            },
+                            splitLine: {
+                                show:true,   //X网格线
+                                lineStyle:{   //x网格线
+                                    color: 'rgba(11,200,217,.2)'
+                                }
+                            },
+                            axisTick:{
+                                show:false,
+                                lineStyle: {
+                                    color: 'rgba(255,255,255,.5)'
+                                }
+                            }
+                        }
+                    ],
+                    series: [
+                    {
+                            // symbol:'emptyCircle', //去掉折线图中的节点
+                            symbolSize:0, //折线点的大小
+                            smooth: true,  //true 为平滑曲线，false为直线
+                            name:'认证会员',
+                            type:'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            // data:y2,
+//                          data:[751, 89, 45, 1200, 560, 420, 3745, 1809, 2762, 2096, 3049, 1021],
+                            data:this.liveness.certifiedMembers,
+                            itemStyle: {
+                                normal: {   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                    color: '#FF5C61',  //背景渐变色
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width: 2,
+                                        type: 'solid',
+                                        color: "#FF5C61"
+                                    }
+                                },
+                                emphasis: {
+                                    color: '#FF5C61',
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width:2,
+                                        type: 'dotted',
+                                        color: "#FF5C61" //折线的颜色
+                                    }
+                                }
+                            },//线条样式
+                        },
+                        {
+                            // symbol:'emptyCircle', //去掉折线图中的节点
+                            symbolSize:0, //折线点的大小
+                            smooth: true,  //true 为平滑曲线，false为直线
+                            name:'会员',
+                            type:'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            // data:y,
+//                          data:[751, 89, 45, 1200, 560, 420, 3745, 1809, 2762, 2096, 3049, 1021],
+                            data:this.liveness.members,
+                            itemStyle: {
+                                normal: {   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                    color: 'rgba(255, 132, 38,1)',  //背景渐变色
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width: 2,
+                                        type: 'solid',
+                                        color: "rgba(255, 132, 38,1)"
+                                    }
+                                },
+                                emphasis: {
+                                    color: 'rgba(255, 132, 38,1)',
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width:2,
+                                        type: 'dotted',
+                                        color: "rgba(255, 132, 38,1)" //折线的颜色
+                                    }
+                                }
+                            },//线条样式
+                        },
+
+                        {
+                            // symbol:'emptyCircle', //去掉折线图中的节点
+                            symbolSize:0, //折线点的大小
+                            smooth: true,  //true 为平滑曲线，false为直线
+                            name:'尊享会员',
+                            type:'line',
+                            stack: '总量',
+                            areaStyle: {},
+                            // data:y3,
+//                          data:[751, 89, 45, 1200, 560, 420, 3745, 1809, 2762, 2096, 3049, 1021],
+                            data:this.liveness.respectingMembers,
+                            itemStyle: {
+                                normal: {   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                    color: 'rgba(0, 203, 222, 1)',  //背景渐变色
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width: 2,
+                                        type: 'solid',
+                                        color: "rgba(0, 203, 222, 1)"
+                                    }
+                                },
+                                emphasis: {
+                                    color: 'rgba(0, 203, 222, 1)',
+                                    lineStyle: {        // 系列级个性化折线样式
+                                        width:2,
+                                        type: 'dotted',
+                                        color: "rgba(0, 203, 222, 1)" //折线的颜色
+                                    }
+                                }
+                            },//线条样式
+                        }]
+                });
+            },
+            //所倾向方式
+            qx:function () {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('qx'));
+                var option = {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{b} <br/> {d}%"
+                    },
+                    calculable: true,
+                    series: [
+                        {
+                            type:'funnel',
+                            width: '90%',
+                            height: '100%',
+                            left: '5%',
+                            top: '5%',
+                            minSize:'40%',
+                            color:['#FF5C61','#FF8426','#0A95FF','#00C9DB'],
+                            label: {
+                                normal: {
+                                    position: 'inner'
+                                },
+                            },
+                            itemstyle:{
+                                normal:{
+                                    borderColor:'#000',
+                                }
+                            },
+//                          data:[
+//                              {
+//                                  value: 458,
+//                                  name: '电话咨询'+'  '+458,
+//                                  itemStyle:{
+//                                      borderColor:'#000'
+//                                  }},
+//                              {
+//                                  value: 380,
+//                                  name: '视频咨询'+'  '+380,
+//                                  itemStyle:{
+//                                      borderColor:'#000'
+//                                  }},
+//                              {
+//                                  value: 260,
+//                                  name: '问答咨询'+'  '+260,
+//                                  itemStyle:{
+//                                      borderColor:'#000'
+//                                  }},
+//                              {
+//                                  value: 467,
+//                                  name: '图文咨询'+'  '+467,
+//                                  itemStyle:{
+//                                      borderColor:'#000'
+//                                  }},
+//
+//                          ]
+						data:this.inclination.mode,
+                        },
+
+                    ]
+                };
+
+
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+            //会员注册分析
+            huiyuan:function () {
+                var myChart = echarts.init(document.getElementById('huiyuan'));
+                var option = {
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                            type : 'shadow',        // 默认为直线，可选为：'line' | 'shadow'
+                        },
+                        formatter: function (params) {
+                            var tar = params[1];
+                            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '2%',
+                        top:'20%',
+                        containLabel: true
+                    },
+                    legend: {
+                        itemWidth: 15,
+                        itemHeight: 15,
+                        right:20,
+                        orient: 'horizontal',
+                        data:['总计', '新增用户数'],
+                        textStyle:{
+                            color: '#fff'
+                        },
+                        borderRadius:4,
+                        icon:'roundRect',
+                    },
+
+                    xAxis: {
+                        type : 'category',
+                        axisLabel: {
+                            show: true,
+                            // fontWeight:'bold',
+                            fontSize:'13',
+                            textStyle: {
+                                color: '#fff' //文字颜色
+                            }
+                        },
+                        axisLine:{  //x轴线
+                            show:false,
+                            lineStyle: {
+                                color: '#999999'
+                            }
+                        },
+                        splitLine: {
+                            show:false,   //X网格线
+                            lineStyle:{   //x网格线
+                                color: '#999999'
+                            }
+                        },
+                        axisTick:{
+                            show:false,
+                            lineStyle: {
+                                color: '#AAAAAA'
+                            }
+                        },
+                        // data : ['汇总','10.02','10.03','10.04','10.05','10.06','10.07','10.08','10.09',]
+                        data:this.menbers.menbersName,
+                    },
+                    yAxis: {
+                        type : 'value',
+                        nameTextStyle: {
+                            color: 'rgba(11,200,217,.2)'
+                        },
+                        axisLine:{
+                            show:false,
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.5)'
+                            }
+                        },
+                        splitLine: {
+                            show:true,   //X网格线
+                            lineStyle:{   //x网格线
+                                color: 'rgba(11,200,217,.2)'
+                            }
+                        },
+                        axisTick:{
+                            show:false,
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.5)'
+                            }
+                        }
+                        },
+                    series: [
+                        {
+                            name: '辅助',
+                            type: 'bar',
+                            stack: '总量',
+                            itemStyle: {
+                                normal: {
+                                    barBorderColor: 'rgba(0, 0, 0, 0)',
+                                    color:'rgba(253, 132, 40,0)',
+                                },
+                                emphasis: {
+                                    barBorderColor: 'rgba(0,0,0,0)',
+                                    // color: 'rgba(0,0,0,0)'
+                                }
+                            },
+                            barWidth : 20,
+//                          data: [0, 0, 10, 20, 30, 45,55,65,75]
+							data:this.menbers.assist//数据
+                        },
+                        {
+                            name: '总计',
+                            type: 'bar',
+                            stack: '总量',
+                            itemStyle: {
+                                normal: {
+                                    barBorderColor: 'rgba(0, 0, 0, 0)',
+                                    color:'rgba(0, 203, 222, 1)'
+                                },
+                                emphasis: {
+                                    barBorderColor: 'rgba(0,0,0,0)',
+                                    // color: 'rgba(0,0,0,0)'
+                                }
+                            },
+//                          data: [90]
+							data:this.menbers.aggregate//数据
+                        },
+                        {
+                            name: '新增用户数',
+                            type: 'bar',
+                            stack: '总量',
+                            itemStyle: {
+                                normal: {
+                                    barBorderColor: 'rgba(0, 0, 0, 0)',
+                                    color:'rgba(255, 132, 38, 1)'
+                                },
+                                emphasis: {
+                                    barBorderColor: 'rgba(0,0,0,0)',
+                                    // color: 'rgba(0,0,0,0)'
+                                }
+                            },
+
+//                          data:[0, 10, 10, 10, 15, 10,10,10,15]
+							data:this.menbers.newlyIncareased//数据
+                        }
+                    ]
+                };
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+            //关注领域
+            gzly:function () {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('gzly'));
+
+                var option = {
+                    color:['#00c4d6','#96D5FD','#FFC100','#18C86A','#FF5E63','#0593FF','#F16DE3','#FF6E00','#AB01E2','#78E7CC'],
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: " {b} : {c} <br/>({d}%)"
+                    },
+                    legend: {
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        x : 'center',
+                        bottom:'5%',
+//                      data:['身心健康保健','经济与生活','法律与生活','文化与生活','科学与未来','国学与生活','国防与生活','哲学与生活','健康管理','学习提升'],
+						data:this.follow.followName,
+                        textStyle:{
+                            color: '#fff'
+                        }
+                    },
+                    series : [
+                //             {
+                //                 name:'半径模式',
+                //                 type:'pie',
+                //                 radius : [50，100],
+                //                 center : ['50%', '40%'],
+                //                 roseType : 'radius',
+                //                 label: {
+                //                     normal: {
+                //                         show: false,
+                //                             position: 'center'
+                //                     },
+                //                     emphasis: {
+                //                         show: true
+                //                     }
+                //                 },
+                //                 lableLine: {
+                //                     normal: {
+                //                         show: false
+                //                     },
+                //
+                //                 },
+                //                 data:[
+                //                 {value:20, name:'身心健康与保健'},
+                //                 {value:16, name:'经济与生活'},
+                //                 {value:19, name:'法律与生活'},
+                //                 {value:16, name:'文化与生活'},
+                //                 {value:12, name:'科学与未来'},
+                //                 {value:20, name:'国学与生活'},
+                //                 {value:10, name:'国防与生活'},
+                //                 {value:18, name:'哲学与生活'},
+                //                 {value:15, name:'健康管理'},
+                //                 {value:11, name:'学习提升'}
+                //         ],
+                //         itemStyle: {
+                //     emphasis: {
+                //         shadowBlur: 10,
+                //             shadowOffsetX: 0,
+                //             shadowColor: 'rgba(0, 0, 0, 0.5)'
+                //     }
+                // }
+                //             },
+                            {
+                            name:'',
+                            type:'pie',
+                            //radius : ['0','50%'],
+	                        radius : ['70','100'],
+                            center : ['50%', '40%'],
+                            roseType : 'area',
+                            labelLine: {
+                                normal: {
+                                    show: true,
+                                    length:1,
+                                    length2:5,
+
+                                    lineStyle:{
+                                        width:'1',
+                                    }
+                                },
+
+                            },
+//                          data:[
+//                              {value:26, name:'身心健康与保健'},
+//                              {value:16, name:'经济与生活'},
+//                              {value:19, name:'法律与生活'},
+//                              {value:16, name:'文化与生活'},
+//                              {value:12, name:'科学与未来'},
+//                              {value:20, name:'国学与生活'},
+//                              {value:10, name:'国防与生活'},
+//                              {value:18, name:'哲学与生活'},
+//                              {value:15, name:'健康管理'},
+//                              {value:12, name:'学习提升'}
+//                          ],
+							data:this.follow.followNum,
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+            //心理主题
+            xlzt:function () {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('xlzt'));
+
+                var option = {
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+
+                    radar: [
+                        {
+                            indicator:this.psychology.psychologyName,
+                            center: ['50%','50%'],
+                            radius: 120,
+                            axisTick:{
+                                show:true,
+                            },
+                            axisLine: {            // 坐标轴线
+                                show: true ,// 默认显示，属性show控制显示与否
+                                lineStyle:{
+                                    color: 'rgba(221,221,221,.2)'
+                                },
+                            },
+                            axisLabel: {           // 坐标轴文本标签，
+                                show: false,
+                                textStyle: {
+                                    color: '#ffffff' // 坐标轴刻度文字的样式
+                                }
+                            },
+                            splitArea : {
+                                show : false,
+                                areaStyle : {
+                                    color: ["#2a4a93"]  // 图表背景网格的颜色
+                                }
+                            },
+                            splitLine : {
+                                show : true,
+                                lineStyle : {
+                                    width : 1,
+                                    color: 'rgba(221,221,221,.2)'// 图表背景网格线的颜色
+                                }
+                            },
+                        },
+
+                    ],
+                    series: [
+                        {
+                            type: 'radar',
+                            tooltip: {
+                                trigger: 'item'
+                            },
+                            // color:'#00c4d6',
+                            color: new echarts.graphic.LinearGradient(
+                                1, 0, 0, 0, [{
+                                    offset: 0,
+                                    color: '#039DFF'
+                                },
+                                    {
+                                        offset: 1,
+                                        color: '#00c4d6'
+                                    }
+                                ]
+                            ),
+                            // symbol: 'none',
+                            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                            label: {
+                                show: true,
+                                color: '#FFF',
+                            },
+//                          data: [
+//                              {
+//                                  value: [30985,36109,21601,23091,24091,10963,11105],
+//                                 name:'心理主题热度分析'
+//
+//                              }
+//                          ]
+							data:this.psychology.psychologyNum,
+                            
+                        },
+
+                    ]
+                };
+
+
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(option);
+            },
+
+            map:function(){
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('map'));
+
+                //配置
+                var optionMap = {
+                    color:['#FA761E','#0BC8D9','#B469FF'],
+                    legend: {
+                        itemWidth: 15,
+                        itemHeight: 15,
+                        orient: 'vertical',
+                        textStyle:{
+                            color:"#fff"
+                        },
+                        x: 0,
+                        y:20,
+                        data:['会员','咨询师','讲师']
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: '{b0}: {c0}'
+                    },
+                    visualMap: {
+                        show : true,
+                        min:0,
+                        max:2500,
+                        text:['高','低'],
+                        realtime: false,
+                        // calculable: true,
+                        inRange: {
+                            color: ['#AFE1FA','#3392FF']
+                        },
+                        textStyle:{
+                            color: '#fff',
+
+                        },
+                        calculable: true, //是否显示拖拽用的手柄（手柄能拖拽调整选中范围）
+                        itemWidth: 10,
+                        itemHeight: 100
+                    },
+                    //配置属性
+                    series: [{
+                        name: '会员',
+                        type: 'map',
+                        mapType: 'china',
+                        roam: false,
+                        label: {
+                            normal: {
+                                show: false  //省份名称
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        data:this.mapData.members  //数据
+                    },{
+                        name: '咨询师',
+                        type: 'map',
+                        mapType: 'china',
+                        roam: false,
+                        label: {
+                            normal: {
+                                show: false  //省份名称
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        data:this.mapData.consultant  //数据
+                    },{
+                        name: '讲师',
+                        type: 'map',
+                        mapType: 'china',
+                        roam: false,
+                        label: {
+                            normal: {
+                                show: false  //省份名称
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        data:this.mapData.teacher  //数据
+                    }]
+                };
+
+                //使用制定的配置项和数据显示图表
+                myChart.setOption(optionMap);
+            },
+
+        },
+        mounted:function(){
+            const that = this;
+
+            //行业分布
+            this.hyfb();
+            //活跃度分析
+            this.huoyue();
+            //所倾向方式
+            this.qx();
+            //会员注册分析
+            this.huiyuan();
+            //专注领域
+            this.gzly();
+            //心理主题
+            that.xlzt();
+            this.map();
+
+
+            //自动设置框宽度
+            // $("#box .box-title .top-line").css('width',($("#box").width() - $("#box .box-title .left").width() - $("#box .box-title .center").width() - $("#box .box-title .right").width())/100+'rem')
+
+        }
+    });
+}
+
+</script>
+</html>

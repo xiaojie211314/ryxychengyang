@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+<title>瑞阳心语大数据分析平台</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<style>
+    @font-face{
+        font-family: 'PingFang SC';
+        src: url("font/PingFang SC.ttf");
+    }
+    html,body{height: 100%;overflow-x: auto;}
+    .frame-box {width: 100%;height: calc(100% - 2.15rem);display: flex;}
+    #ryframe1,#ryframe2{width: 192rem;}
+    .header {overflow: hidden;}
+    .header-logo {width: 11.6rem;height: .8rem;margin: .68rem auto .67rem;}
+    .header-logo img.logo-img {width: 100%;height: 100%;}
+    .header-right {top: .9rem;right: .41rem;display: flex;align-items: center;}
+    .header-right img {width: 3.95rem;height: .36rem;}
+    .current-time {display: inline-block;margin-left: .41rem;font-size: .24rem;color: #fff;}
+
+.new_logo{
+    position: absolute;
+    height: .55rem;
+    width: 3.62rem;
+    top: .8rem;
+    left: .3rem;
+}
+</style>
+</head>
+<body>
+    <!-- header -->
+    <div class="header pr">
+<img class="new_logo" src="image/logo_1.png" alt="瑞阳心语心理健康大数据分析平台">
+        <h1 class="header-logo"><img src="image/logo_2.png" class="logo-img" alt="瑞阳心语心理健康大数据分析平台"></h1>
+	
+        <div class="header-right pa">
+            <img src="image/logo_3.png" alt="与心语相约 与健康同行">
+            <span class="current-time">2019-09-12 星期四</span>
+        </div>
+    </div>
+    <!-- iframe -->
+    <div class="frame-box fr">
+        <iframe id="ryframe1" src="ry2/index.html" frameborder="0"></iframe>
+        <iframe id="ryframe2" src="ry3/index.html" frameborder="0"></iframe>
+    </div>
+</body>
+<script type="text/javascript" src="script/jquery.min.js"></script>
+<script type="text/javascript" src="script/flexible.js"></script>
+<script>
+    //获取当前时间
+    function getDateTime(){
+        var dateObj = new Date(); 
+        var year = dateObj.getFullYear();
+        var month = dateObj.getMonth()+1; 
+        var date = dateObj.getDate();
+        var day = dateObj.getDay();
+        var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        var week = weeks[day];
+        var hour = dateObj.getHours();
+        var minute = dateObj.getMinutes();
+        var second = dateObj.getSeconds();
+        return dateFilter(year)+"-"+dateFilter(month)+"-"+dateFilter(date)+" "+week;
+    }    
+    // 年月日不满10位的前面补0
+    function dateFilter(date){
+        if(date < 10){return "0"+date;}
+        return date;
+    }
+    $(".current-time").text(getDateTime());
+
+</script>
+</html>
